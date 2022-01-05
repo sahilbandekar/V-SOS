@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFBFA"
+    android:fillViewport="false"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".RegisterMechanic">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-70dp"
+            android:background="@drawable/top_wave_2" />
+
+        <ImageView
+            android:id="@+id/BackArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+        <TextView
+            android:id="@+id/BackArrowText"
+            style="@style/viewParent.headerText.NoMode"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/BackArrow"
+            android:text="Back"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/poppins"
+            android:text="Register as Mechanic"
+            android:textAlignment="center"
+            android:textColor="#E64A19"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+
+            <!--    Label - Full Name    -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:paddingBottom="4dp"
+                android:text="Full Name"
+                android:textColor="#3C3C3C"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/inputName"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="15dp"
+                android:autofillHints="name"
+                android:background="@drawable/custom_input"
+                android:drawablePadding="12dp"
+                android:hint=""
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+
+            <!--    Label - Mobile Number    -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:paddingBottom="4dp"
+                android:text="Mobile Number"
+                android:textColor="#3C3C3C"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/inputMobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="15dp"
+                android:autofillHints="name"
+                android:background="@drawable/custom_input"
+                android:drawablePadding="12dp"
+                android:hint=""
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+
+            <!--    Label - Email ID    -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:paddingBottom="4dp"
+                android:text="Email ID"
+                android:textColor="#3C3C3C"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/inputEmail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="15dp"
+                android:autofillHints="name"
+                android:background="@drawable/custom_input"
+                android:drawablePadding="12dp"
+                android:hint=""
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+
+            <!--    Label - Password    -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:paddingBottom="4dp"
+                android:text="Password"
+                android:textColor="#3C3C3C"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/inputPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="15dp"
+                android:autofillHints="name"
+                android:background="@drawable/custom_input"
+                android:drawablePadding="12dp"
+                android:hint=""
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins"
+                android:text="Upload ASE Certificate"
+                android:textAlignment="center"
+                android:textColor="#3C3C3C"
+                android:textSize="24sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/upload_square_bg" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic__insert_drive_file" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:layout_marginBottom="15dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/CancelBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/button_background_orange"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="Cancel"
+                    android:textAlignment="center"
+                    android:textColor="@color/whiteTextColor"
+                    android:textSize="22sp" />
+
+
+                <TextView
+                    android:id="@+id/btnRegisterMechanic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/button_background_orange"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="Register"
+                    android:textAlignment="center"
+                    android:textColor="@color/whiteTextColor"
+                    android:textSize="22sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        &lt;!&ndash;    HomePage Image    &ndash;&gt;-->
+    <!--        <ImageView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:src="@drawable/dashboard_top_bg" />-->
+
+    <!--        &lt;!&ndash;    Heading    &ndash;&gt;-->
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:fontFamily="@font/poppins_medium"-->
+    <!--            android:text="Hey User,"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="30sp" />-->
+
+    <!--        &lt;!&ndash;    Sub Heading    &ndash;&gt;-->
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:fontFamily="@font/poppins"-->
+    <!--            android:text="How can we help you today?"-->
+    <!--            android:textColor="#696969"-->
+    <!--            android:textSize="18sp" />-->
+
+    <!--        &lt;!&ndash;    Card Container    &ndash;&gt;-->
+    <!--        <GridLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:alignmentMode="alignMargins"-->
+    <!--            android:columnCount="2"-->
+    <!--            android:padding="20dp"-->
+    <!--            android:rowCount="3">-->
+
+    <!--            &lt;!&ndash;    Card 1    &ndash;&gt;-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:id="@+id/myVehicle"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:layout_marginEnd="15dp"-->
+    <!--                android:layout_marginBottom="10dp"-->
+    <!--                android:clipToPadding="false"-->
+    <!--                app:cardBackgroundColor="@color/whiteTextColor"-->
+    <!--                app:cardCornerRadius="15dp"-->
+    <!--                app:cardElevation="5dp">-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    android:layout_margin="16dp"-->
+    <!--                    android:orientation="vertical">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="60dp"-->
+    <!--                        android:layout_height="60dp"-->
+    <!--                        android:layout_gravity="center_horizontal"-->
+    <!--                        android:layout_marginBottom="5dp"-->
+    <!--                        android:src="@drawable/my_dash_car" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:fontFamily="@font/poppins_medium"-->
+    <!--                        android:text="My Vehile"-->
+    <!--                        android:textAlignment="center"-->
+    <!--                        android:textColor="@color/black"-->
+    <!--                        android:textSize="18sp" />-->
+    <!--                </LinearLayout>-->
+
+    <!--            </androidx.cardview.widget.CardView>-->
+
+    <!--            &lt;!&ndash;    Card 2    &ndash;&gt;-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:id="@+id/helpMe"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:layout_marginEnd="15dp"-->
+    <!--                android:layout_marginBottom="10dp"-->
+    <!--                android:clipToPadding="false"-->
+    <!--                app:cardBackgroundColor="@color/whiteTextColor"-->
+    <!--                app:cardCornerRadius="15dp"-->
+    <!--                app:cardElevation="5dp">-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    android:layout_margin="16dp"-->
+    <!--                    android:orientation="vertical">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="60dp"-->
+    <!--                        android:layout_height="60dp"-->
+    <!--                        android:layout_gravity="center_horizontal"-->
+    <!--                        android:layout_marginBottom="5dp"-->
+    <!--                        android:src="@drawable/my_dash_sos" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:fontFamily="@font/poppins_medium"-->
+    <!--                        android:text="Help Me"-->
+    <!--                        android:textAlignment="center"-->
+    <!--                        android:textColor="@color/black"-->
+    <!--                        android:textSize="18sp" />-->
+    <!--                </LinearLayout>-->
+    <!--            </androidx.cardview.widget.CardView>-->
+
+    <!--            &lt;!&ndash;    Card 3    &ndash;&gt;-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:id="@+id/fuelStation"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:layout_marginEnd="15dp"-->
+    <!--                android:layout_marginBottom="10dp"-->
+    <!--                android:clipToPadding="false"-->
+    <!--                app:cardBackgroundColor="@color/whiteTextColor"-->
+    <!--                app:cardCornerRadius="15dp"-->
+    <!--                app:cardElevation="5dp">-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    android:layout_margin="16dp"-->
+    <!--                    android:orientation="vertical">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="60dp"-->
+    <!--                        android:layout_height="60dp"-->
+    <!--                        android:layout_gravity="center_horizontal"-->
+    <!--                        android:layout_marginBottom="5dp"-->
+    <!--                        android:src="@drawable/my_dash_fuel_station" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:fontFamily="@font/poppins_medium"-->
+    <!--                        android:text="Fuel Station"-->
+    <!--                        android:textAlignment="center"-->
+    <!--                        android:textColor="@color/black"-->
+    <!--                        android:textSize="18sp" />-->
+    <!--                </LinearLayout>-->
+    <!--            </androidx.cardview.widget.CardView>-->
+
+    <!--            &lt;!&ndash;    Card 4    &ndash;&gt;-->
+    <!--            <androidx.cardview.widget.CardView-->
+    <!--                android:id="@+id/profile"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_rowWeight="1"-->
+    <!--                android:layout_columnWeight="1"-->
+    <!--                android:layout_marginStart="10dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:layout_marginEnd="15dp"-->
+    <!--                android:layout_marginBottom="10dp"-->
+    <!--                android:clipToPadding="false"-->
+    <!--                app:cardBackgroundColor="@color/whiteTextColor"-->
+    <!--                app:cardCornerRadius="15dp"-->
+    <!--                app:cardElevation="5dp">-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_gravity="center"-->
+    <!--                    android:layout_margin="16dp"-->
+    <!--                    android:orientation="vertical">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:layout_width="60dp"-->
+    <!--                        android:layout_height="60dp"-->
+    <!--                        android:layout_gravity="center_horizontal"-->
+    <!--                        android:layout_marginBottom="5dp"-->
+    <!--                        android:src="@drawable/my_dash_profile" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:fontFamily="@font/poppins_medium"-->
+    <!--                        android:text="Profile"-->
+    <!--                        android:textAlignment="center"-->
+    <!--                        android:textColor="@color/black"-->
+    <!--                        android:textSize="18sp" />-->
+    <!--                </LinearLayout>-->
+    <!--            </androidx.cardview.widget.CardView>-->
+
+    <!--        </GridLayout>-->
+
+    <!--    </LinearLayout>-->
+

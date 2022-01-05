@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:focusableInTouchMode="true"
+    tools:context=".Register_Vehicle_Details">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-70dp"
+                android:background="@drawable/top_wave_2" />
+
+            <ImageView
+                android:id="@+id/BackArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24" />
+
+            <TextView
+                android:id="@+id/BackArrowText"
+                style="@style/viewParent.headerText.NoMode"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="17dp"
+                android:layout_toEndOf="@+id/BackArrow"
+                android:text="Back"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="41dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Vehicle Details"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="36sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:paddingBottom="4dp"
+                    android:text=" Regd Owner"
+                    android:textColor="#3C3C3C"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:autofillHints="name"
+                    android:background="@drawable/custom_input"
+                    android:drawablePadding="12dp"
+                    android:hint="Ex. John Michael Doe"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:paddingBottom="4dp"
+                    android:text=" Reg No"
+                    android:textColor="#3C3C3C"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/custom_input"
+                    android:drawablePadding="12dp"
+                    android:hint="Ex. MH-43-AC-1985"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:paddingBottom="4dp"
+                    android:text=" Make / Model"
+                    android:textColor="#3C3C3C"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/custom_input"
+                    android:drawablePadding="12dp"
+                    android:hint="Ex. A‑Class / Mercedes‑Benz"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:paddingBottom="4dp"
+                    android:text=" Colour"
+                    android:textColor="#3C3C3C"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/custom_input"
+                    android:drawablePadding="12dp"
+                    android:hint="Ex. Black"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:paddingBottom="4dp"
+                    android:text=" Year"
+                    android:textColor="#3C3C3C"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/custom_input"
+                    android:drawablePadding="12dp"
+                    android:hint="Ex. 2019"
+                    android:inputType="date|datetime"
+                    android:padding="10dp"
+                    android:textSize="16sp" />
+
+                <!--         Register Button       -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/registerMechanic"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/button_background_orange"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:text="Register"
+                        android:textAlignment="center"
+                        android:textColor="@color/whiteTextColor"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

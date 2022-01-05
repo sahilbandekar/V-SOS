@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8F6"
+    android:focusableInTouchMode="true"
+    tools:context=".Dashboard_accountInfo">
+
+    <!--   Top Wave with back btn and heading     -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-70dp"
+            android:background="@drawable/top_wave_2" />
+
+        <TextView
+            android:id="@+id/BackArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_baseline_keyboard_backspace_24" />
+
+        <TextView
+            android:id="@+id/BackArrowText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Profile"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Profile Info"
+            android:textAlignment="center"
+            android:textColor="#FF6B00"
+            android:textSize="36sp" />
+    </RelativeLayout>
+
+    <!--    User's Info    -->
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+        <!--    User Name Section    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:fontFamily="@font/poppins"
+            android:paddingBottom="4dp"
+            android:text="Name"
+            android:textColor="#0D0D0D"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/fixedNameText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/poppins"
+            android:padding="10dp"
+            android:text="John Michael Doe"
+            android:textColor="#414141"
+            android:textSize="18sp" />
+
+
+        <!--   User Mobile Section    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:fontFamily="@font/poppins"
+            android:paddingBottom="4dp"
+            android:text="Mobile"
+            android:textColor="#0D0D0D"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/fixedMobileText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/poppins"
+            android:padding="10dp"
+            android:text="+91 83482 92732"
+            android:textColor="#414141"
+            android:textSize="18sp" />
+
+        <!--    User Email Section    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:fontFamily="@font/poppins"
+            android:paddingBottom="4dp"
+            android:text="Email"
+            android:textColor="#0D0D0D"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/fixedEmailText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/poppins"
+            android:importantForAutofill="no"
+            android:padding="10dp"
+            android:text="johndoe12@gmail.com"
+            android:textColor="#414141"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <!--    Edit Profile Button    -->
+    <TextView
+        android:id="@+id/EditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_background_orange"
+        android:drawablePadding="-20dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="Edit Profile"
+        android:textAlignment="center"
+        android:textColor="@color/whiteTextColor"
+        android:textSize="20sp"
+        app:drawableRightCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
+
+    <!--    Logout Button    -->
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="20dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Log Out"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        app:drawableStartCompat="@drawable/icon_logout"
+        app:layout_constraintBottom_toBottomOf="@+id/EditProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/EditProfile"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--    Bottom Wave    -->
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/bottom_wave_fixed_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

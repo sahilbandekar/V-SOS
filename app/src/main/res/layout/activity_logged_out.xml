@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoggedOut">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="300dp"
+            android:layout_height="260dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="40dp"
+            app:srcCompat="@drawable/logout" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Successfully Logged Out"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+
+            android:fontFamily="@font/poppins"
+            android:text="Oh no... Please come back..."
+            android:textAlignment="center"
+            android:textColor="#696969"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/button_background_orange"
+            android:backgroundTint="#013220"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:paddingStart="18dp"
+            android:text="Login with Email"
+            android:textColor="@color/whiteTextColor"
+            android:textSize="22sp"
+            app:drawableStartCompat="@drawable/email_30dp"
+            app:drawableTint="@color/whiteTextColor" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/button_background_orange"
+            android:backgroundTint="#1255FF"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:paddingStart="68dp"
+            android:text="Login with Facebook"
+            android:textColor="@color/whiteTextColor"
+            android:textSize="22sp"
+            app:drawableTint="@color/whiteTextColor" />
+
+        <ImageView
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-38dp"
+            android:src="@drawable/ic_facebook_30dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/poppins"
+            android:text="By signing up, you consent to the"
+            android:textAlignment="center"
+            android:textColor="#696969"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Terms &amp; Conditions"
+            android:textAlignment="center"
+            android:textColor="#001AFF"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
