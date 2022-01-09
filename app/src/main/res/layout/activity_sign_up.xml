@@ -125,6 +125,7 @@
                         app:spinning_bar_padding="6dp"
                         app:spinning_bar_width="4dp" />
 
+
                     <TextView
                         style="@style/parent"
                         android:layout_marginTop="@dimen/loginViewsMargin"

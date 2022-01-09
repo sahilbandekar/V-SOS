@@ -14,7 +14,7 @@ public class SignupSuccess extends AppCompatActivity {
 
         letsGetStarted = findViewById(R.id.letsGetStarted);
         letsGetStarted.setOnClickListener(v -> {
-            Intent intent = new Intent(SignupSuccess.this, Dashboard.class);
+            Intent intent = new Intent(SignupSuccess.this, Homepage.class);
             startActivity(intent);
             finish();
         });

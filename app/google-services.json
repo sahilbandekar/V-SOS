@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "1071978556071",
-    "project_id": "v-sos-project",
-    "storage_bucket": "v-sos-project.appspot.com"
+    "project_number": "974189564882",
+    "firebase_url": "https://v-sos-fd444-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "v-sos-fd444",
+    "storage_bucket": "v-sos-fd444.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1071978556071:android:df42ac9566d726dbce4982",
+        "mobilesdk_app_id": "1:974189564882:android:d5d128b52cf23ba10e6e0b",
         "android_client_info": {
           "package_name": "com.example.vsos"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1071978556071-aj4euafdofnhmm5ieic8ejj0raai2mv0.apps.googleusercontent.com",
+          "client_id": "974189564882-j8s2kd6a5s9iikck4cipfbuhnp2r2p20.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vsos",
+            "certificate_hash": "b6deb389fbd11626df968182572e3dca67f1f465"
+          }
+        },
+        {
+          "client_id": "974189564882-58clune2rr8g4pfnupktcdqqph14pi63.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDOfBXyRgfnKL0LFaFl8QTXI_Kkm_eJVaY"
+          "current_key": "AIzaSyCoOUYugOHm18gM38HAnuKqqYTZB8t51dc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1071978556071-aj4euafdofnhmm5ieic8ejj0raai2mv0.apps.googleusercontent.com",
+              "client_id": "974189564882-58clune2rr8g4pfnupktcdqqph14pi63.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
