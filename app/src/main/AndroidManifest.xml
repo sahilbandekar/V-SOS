@@ -24,6 +24,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VSOS">
         <activity
+            android:name=".EmailVerification"
+            android:exported="false" />
+        <activity
             android:name=".FacebookAuthActivity"
             android:exported="false" />
         <activity
@@ -125,14 +128,11 @@
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-
-        <!-- Facebook Meta Data -->
+            android:resource="@array/preloaded_fonts" /> <!-- Facebook Meta Data -->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"
             tools:replace="android:value" />
-
     </application>
 
 </manifest>

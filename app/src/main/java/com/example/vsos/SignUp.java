@@ -1,6 +1,9 @@
 package com.example.vsos;
 
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -9,6 +12,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.EmailAuthProvider;
@@ -53,9 +59,9 @@ public class SignUp extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-       btnRegister.setOnClickListener(v -> PerformAuth());
+        btnRegister.setOnClickListener(v -> PerformAuth());
 
-       // Google
+        // Google
         ImageView btnGoogle = findViewById(R.id.btnGoogle);
         btnGoogle.setOnClickListener(v -> {
             Intent intent = new Intent(SignUp.this, GoogleSignInActivity.class);
@@ -77,17 +83,13 @@ public class SignUp extends AppCompatActivity {
         String number = inputMobileNumber.getText().toString();
         String password = inputPassword.getText().toString();
 
-        if (!email.matches(emailPattern))
-        {
+        if (!email.matches(emailPattern)) {
             inputEmail.setError("Enter Correct Email");
-        }else if (password.isEmpty() || password.length()<6)
-        {
+        } else if (password.isEmpty() || password.length() < 6) {
             inputPassword.setError("Enter Correct Password");
-        }else if (!number.matches(mobileNumberpattern))
-        {
+        } else if (!number.matches(mobileNumberpattern)) {
             inputMobileNumber.setError("Enter Correct Mobile Number");
-        }
-        else {
+        } else {
             progressDialog.setMessage("Please wait while registration...");
             progressDialog.setTitle("Registration");
             progressDialog.setCanceledOnTouchOutside(false);
@@ -96,10 +98,28 @@ public class SignUp extends AppCompatActivity {
             AuthCredential credential = EmailAuthProvider.getCredential(email, password);
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    UserClass userMap = new UserClass(email,password,name,number);
+
+//                  Send Verification Link
+                    FirebaseUser currentUser = mAuth.getCurrentUser();
+                    assert currentUser != null;
+                    currentUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(@NonNull Void unused) {
+                            Toast.makeText(SignUp.this, "Verification Email has been sent", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
+
+                        }
+                    });
+
+
+                    UserClass userMap = new UserClass(email, password, name, number);
 
                     FirebaseUser user = task.getResult().getUser();
-                    if (user==null){
+                    if (user == null) {
                         deleteCredential(credential);
                         return;
                     }
@@ -110,7 +130,7 @@ public class SignUp extends AppCompatActivity {
                             .child(userId)
                             .setValue(userMap)
                             .addOnCompleteListener(task1 -> {
-                                if (!task1.isSuccessful()){
+                                if (!task1.isSuccessful()) {
                                     return;
                                 }
                                 progressDialog.dismiss();
@@ -118,10 +138,9 @@ public class SignUp extends AppCompatActivity {
                                 sendUserToNextActivity();
                             }).addOnFailureListener(SignUp.this, e -> deleteCredential(credential));
 
-                }else
-               {
+                } else {
                     progressDialog.dismiss();
-                   Toast.makeText(SignUp.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -129,9 +148,7 @@ public class SignUp extends AppCompatActivity {
 
     }
 
-    /**
-     * Delete User Credential
-     */
+    //    Delete User Credential
     private void deleteCredential(AuthCredential credential) {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         if (firebaseUser != null) {
@@ -152,8 +169,8 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent = new Intent(SignUp.this,SignupSuccess.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent = new Intent(SignUp.this, EmailVerification.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
@@ -167,8 +184,7 @@ public class SignUp extends AppCompatActivity {
         }
     }
 
-    public void onLoginClick(View view)
-    {
+    public void onLoginClick(View view) {
         startActivity(new Intent(this, Login.class));
         overridePendingTransition(R.anim.slide_in_left, android.R.anim.slide_out_right);
     }

@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class ResetPassword_F2 extends AppCompatActivity {
 
-    private TextView openEmail, tryAnotherEmail;
+    private TextView tryAnotherEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +23,6 @@ public class ResetPassword_F2 extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-//        openEmail = findViewById(R.id.openEmail);
-//        openEmail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(ResetPassword_F2.this, ResetPassword_F3_newPass.class);
-//                startActivity(intent);
-//
-//            }
-//        });
     }
 
     public void openApp(View view){
