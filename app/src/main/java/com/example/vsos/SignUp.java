@@ -49,6 +49,7 @@ public class SignUp extends AppCompatActivity {
         changeStatusBarColor();
 
 
+        // Hooking Variables
         inputName = findViewById(R.id.inputName);
         inputEmail = findViewById(R.id.inputEmail);
         inputMobileNumber = findViewById(R.id.inputMobileNumber);
@@ -59,6 +60,7 @@ public class SignUp extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
+        // Onclick Listener for Register button
         btnRegister.setOnClickListener(v -> PerformAuth());
 
         // Google
@@ -96,6 +98,7 @@ public class SignUp extends AppCompatActivity {
             progressDialog.show();
 
             AuthCredential credential = EmailAuthProvider.getCredential(email, password);
+
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
 
@@ -170,7 +173,7 @@ public class SignUp extends AppCompatActivity {
 
     private void sendUserToNextActivity() {
         Intent intent = new Intent(SignUp.this, EmailVerification.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
@@ -184,6 +187,9 @@ public class SignUp extends AppCompatActivity {
         }
     }
 
+
+
+    // Sliding  Animation
     public void onLoginClick(View view) {
         startActivity(new Intent(this, Login.class));
         overridePendingTransition(R.anim.slide_in_left, android.R.anim.slide_out_right);

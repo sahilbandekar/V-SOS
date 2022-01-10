@@ -175,18 +175,27 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/upload_square_bg" />
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/upload_square_bg__2" />
+
+                <!--                <ImageView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:src="@drawable/ic__insert_drive_file" />-->
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic__insert_drive_file" />
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/undraw_upload_re_pasx" />
 
             </FrameLayout>
 
