@@ -37,7 +37,7 @@
         <entry key="..\:/SAHIL/V_SOS_folder/VSOS/app/src/main/res/layout/activity_mainscreen.xml" value="0.23645833333333333" />
         <entry key="..\:/SAHIL/V_SOS_folder/VSOS/app/src/main/res/layout/activity_maps.xml" value="0.23645833333333333" />
         <entry key="..\:/SAHIL/V_SOS_folder/VSOS/app/src/main/res/layout/activity_password_changed_success.xml" value="0.264" />
-        <entry key="..\:/SAHIL/V_SOS_folder/VSOS/app/src/main/res/layout/activity_register_mechanic.xml" value="0.1" />
+        <entry key="..\:/SAHIL/V_SOS_folder/VSOS/app/src/main/res/layout/activity_register_mechanic.xml" value="0.264" />
         <entry key="..\:/SAHIL/V_SOS_folder/VSOS/app/src/main/res/layout/activity_register_option.xml" value="0.2" />
         <entry key="..\:/SAHIL/V_SOS_folder/VSOS/app/src/main/res/layout/activity_register_vehicle.xml" value="0.2" />
         <entry key="..\:/SAHIL/V_SOS_folder/VSOS/app/src/main/res/layout/activity_register_vehicle_details.xml" value="0.264" />
@@ -61,7 +61,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.4" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>

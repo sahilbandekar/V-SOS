@@ -21,7 +21,7 @@ public class EmailVerification extends AppCompatActivity {
 
         TryAnotherEmail = findViewById(R.id.tryAnotherEmail);
         TryAnotherEmail.setOnClickListener(v -> {
-            Intent intent = new Intent(EmailVerification.this, SignUp.class);
+            Intent intent = new Intent(EmailVerification.this, RegisterOption.class);
             startActivity(intent);
         });
 
