@@ -195,7 +195,7 @@ public class RegisterMechanic extends AppCompatActivity {
         }
     }
 
-
+    // Sending user to next activity after Registration
     private void sendUserToNextActivity() {
         Intent intent = new Intent(RegisterMechanic.this, EmailVerification.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
