@@ -26,10 +26,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Objects;
+
 
 public class RegisterMechanic extends AppCompatActivity {
 
-    EditText inputName, inputEmail, inputMobileNumber, inputPassword;
+    EditText inputName, inputEmail, inputMobileNumber;
+    com.google.android.material.textfield.TextInputEditText inputPassword;
     FrameLayout btn_upload;
 
     // String for Email Validation
@@ -118,7 +121,7 @@ public class RegisterMechanic extends AppCompatActivity {
         String name = inputName.getText().toString();
         String email = inputEmail.getText().toString();
         String number = inputMobileNumber.getText().toString();
-        String password = inputPassword.getText().toString();
+        String password = Objects.requireNonNull(inputPassword.getText()).toString();
 
         if (!email.matches(emailPattern)) {
             inputEmail.setError("Enter Correct Email");
