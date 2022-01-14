@@ -1,16 +1,12 @@
 package com.example.vsos;
 
-import static android.content.ContentValues.TAG;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.firebase.ui.auth.data.remote.FacebookSignInHandler;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -23,6 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class GoogleSignInActivity extends Login {
 
@@ -71,7 +68,7 @@ public class GoogleSignInActivity extends Login {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
 
-                Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
                 finish();
 
@@ -87,22 +84,68 @@ public class GoogleSignInActivity extends Login {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            progressDialog.dismiss();
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+
+                            FirebaseUser user = task.getResult().getUser();
+                            if (user == null) {
+                                deleteCredential(credential);
+                                return;
+                            }
+                            GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(GoogleSignInActivity.this);
+                            if (acct == null) {
+                                deleteCredential(credential);
+                                return;
+                            }
+                            String personName = acct.getDisplayName();
+                            String personEmail = acct.getEmail();
+
+                            UserClass userMap = new UserClass(personEmail, "Google User", personName, "default");
+
+                            String userId = user.getUid();
+
+                            FirebaseDatabase.getInstance().getReference().child("Users")
+                                    .child(userId)
+                                    .setValue(userMap)
+                                    .addOnCompleteListener(task1 -> {
+                                        if (!task1.isSuccessful()) {
+                                            return;
+                                        }
+                                        progressDialog.dismiss();
+                                        Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_SHORT).show();
+                                        updateUI();
+                                    }).addOnFailureListener(GoogleSignInActivity.this, e -> deleteCredential(credential));
                         } else {
                             // If sign in fails, display a message to the user.
                             progressDialog.dismiss();
-                            Toast.makeText(GoogleSignInActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(GoogleSignInActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }
                 });
     }
 
-    private void updateUI(FirebaseUser user) {
+    //    Delete User Credential
+    private void deleteCredential(AuthCredential credential) {
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (firebaseUser != null) {
+            firebaseUser.reauthenticate(credential).addOnCompleteListener(task -> {
+                if (!task.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(), "Unable to register", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                firebaseUser.delete().addOnCompleteListener(task1 -> {
+                    if (!task1.isSuccessful()) {
+                        return;
+                    }
+                    progressDialog.dismiss();
+                    Toast.makeText(getApplicationContext(), "Unable to register", Toast.LENGTH_SHORT).show();
+                });
+            });
+        }
+    }
+
+    private void updateUI() {
         Intent intent = new Intent(GoogleSignInActivity.this, Homepage.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }

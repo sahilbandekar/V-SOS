@@ -1,24 +1,28 @@
 package com.example.vsos;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.icu.number.IntegerWidth;
-import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
-
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 
 public class Dashboard_accountInfo extends AppCompatActivity {
 
-    private EditText mName, mMobile, mEmail;
-    private TextView EditProfile;
+
+
+    EditText fullName, email, phone;
 
 
     @Override
@@ -26,57 +30,81 @@ public class Dashboard_accountInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_account_info);
 
-        mName = findViewById(R.id.fixedNameText);
-        mName.setEnabled(false); //to disable it
-//        mName.setOnClickListener(v -> {
-//            mName.setFocusableInTouchMode(true); //to enable it
-//        });
-
-        mMobile = findViewById(R.id.fixedMobileText);
-        mMobile.setEnabled(false);
-
-        mEmail = findViewById(R.id.fixedEmailText);
-        mEmail.setEnabled(false);
-
         TextView BackArrow = findViewById(R.id.BackArrow);
-        BackArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Dashboard_accountInfo.this, Homepage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
         TextView BackArrowText = findViewById(R.id.BackArrowText);
-        BackArrowText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Dashboard_accountInfo.this, Homepage.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
-        //Logout Button
         TextView logout = findViewById(R.id.logout);
-        logout.setOnClickListener(v -> {
-            Intent intent = new Intent(Dashboard_accountInfo.this, LoggedOut.class);
+
+        phone = findViewById(R.id.profilePhone);
+        fullName = findViewById(R.id.fullName);
+        email = findViewById(R.id.profileEmail);
+
+
+        fullName.setEnabled(false); //to disable
+        phone.setEnabled(false);
+        email.setEnabled(false);
+
+        BackArrow.setOnClickListener(v -> {
+            Intent intent = new Intent(Dashboard_accountInfo.this, Homepage.class);
             startActivity(intent);
-            finish();
+//                finish();
+        });
+        BackArrowText.setOnClickListener(v -> {
+            Intent intent = new Intent(Dashboard_accountInfo.this, Homepage.class);
+            startActivity(intent);
+//                finish();
         });
 
-        EditProfile = findViewById(R.id.EditProfile);
-        EditProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Dashboard_accountInfo.this, Dashboard_Edit_Account_Info.class);
-                startActivity(intent);
-                finish();
+        //Logout Button - Making a user SignOut
+        logout.setOnClickListener(v -> {
+            if (v.getId() == R.id.logout) {
+                AuthUI.getInstance()
+                        .signOut(Dashboard_accountInfo.this)
+                        .addOnCompleteListener(task -> {
+                            // user is now signed out
+                            startActivity(new Intent(Dashboard_accountInfo.this, LoggedOut.class));
+
+                            finish();
+                        });
             }
         });
 
+        // Fetching user's data
+        firebaseMethod();
+
+    }
+
+    // Displaying User's information
+    private void firebaseMethod() {
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        if (uid == null) {
+            return;
+        }
+        Log.d("ContentValues", uid);
+        FirebaseDatabase.getInstance().getReference().child("Users")
+                .child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!snapshot.exists()) {
+                    return;
+                }
+                UserClass users = snapshot.getValue(UserClass.class);
+                if (users == null) {
+                    return;
+                }
+                email.setText(users.getEmail());
+                if (users.getPhoneNumber().equals("default")) {
+                    phone.setVisibility(View.GONE);
+                } else {
+                    phone.setText(users.getPhoneNumber());
+                }
+                fullName.setText(users.getName().toUpperCase());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 }

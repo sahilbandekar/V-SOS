@@ -1,5 +1,7 @@
 package com.example.vsos;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -99,6 +101,19 @@ public class Login extends AppCompatActivity {
                 startActivity(new Intent(Login.this, ResetPassword.class));
             }
         });
+
+
+        // Making user stay Logged in
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            Intent i = new Intent(Login.this, Homepage.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        } else {
+            // User is signed out
+            Log.d(TAG, "onAuthStateChanged:signed_out");
+        }
     }
 
     private void PerformLoginAuth() {

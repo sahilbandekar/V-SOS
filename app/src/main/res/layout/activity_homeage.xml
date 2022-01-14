@@ -25,14 +25,28 @@
             android:src="@drawable/dashboard_top_bg" />
 
         <!--    Heading    -->
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/poppins_medium"
-            android:text="Hey User,"
-            android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Hey, "
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+        </LinearLayout>
+
 
         <!--    Sub Heading    -->
         <TextView

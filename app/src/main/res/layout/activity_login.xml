@@ -69,15 +69,17 @@
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/forgotPassword"
-                style="@style/viewParent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="10dp"
-                android:text="Forgot Password?"
-                android:textColor="@color/primaryTextColor"
-                android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/forgotPassword"
+                    style="@style/viewParent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Forgot Password?"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="14sp" />
+<!--            android:layout_marginTop="-25dp"-->
 
             <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
                 android:id="@+id/cirLoginButton"

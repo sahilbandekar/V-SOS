@@ -67,98 +67,90 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
 
         <!--    User Name Section    -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:fontFamily="@font/poppins"
-            android:paddingBottom="4dp"
-            android:text="Name"
-            android:textColor="#0D0D0D"
-            android:textSize="18sp" />
-
-
-        <EditText
-            android:id="@+id/fixedNameText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/custom_input"
-            android:fontFamily="@font/poppins"
-            android:padding="10dp"
-            android:text="John Michael Doe"
-            android:textColor="#414141"
-            android:textSize="18sp" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="13dp"
+                android:fontFamily="@font/poppins"
+                android:text="Name :-"
+                android:textColor="#0D0D0D"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/fullName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/custom_input"
+                android:fontFamily="@font/poppins"
+                android:textColor="#414141"
+                android:textSize="18sp" />
+        </LinearLayout>
 
 
         <!--   User Mobile Section    -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:fontFamily="@font/poppins"
-            android:paddingBottom="4dp"
-            android:text="Mobile"
-            android:textColor="#0D0D0D"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/fixedMobileText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/custom_input"
-            android:fontFamily="@font/poppins"
-            android:padding="10dp"
-            android:text="+91 83482 92732"
-            android:textColor="#414141"
-            android:textSize="18sp" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins"
+                android:paddingBottom="4dp"
+                android:text="Mobile :-"
+                android:textColor="#0D0D0D"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/profilePhone"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/custom_input"
+                android:fontFamily="@font/poppins"
+                android:textColor="#414141"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
 
         <!--    User Email Section    -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:fontFamily="@font/poppins"
-            android:paddingBottom="4dp"
-            android:text="Email"
-            android:textColor="#0D0D0D"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/fixedEmailText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/custom_input"
-            android:fontFamily="@font/poppins"
-            android:importantForAutofill="no"
-            android:padding="10dp"
-            android:text="johndoe12@gmail.com"
-            android:textColor="#414141"
-            android:textSize="18sp" />
+            android:layout_height="wrap_content">
 
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_marginRight="20dp"
+                android:paddingBottom="4dp"
+                android:text="Email :-"
+                android:textColor="#0D0D0D"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/profileEmail"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/custom_input"
+                android:fontFamily="@font/poppins"
+                android:textColor="#414141"
+                android:textSize="18sp" />
+        </LinearLayout>
     </LinearLayout>
 
-    <!--    Edit Profile Button    -->
-    <TextView
-        android:id="@+id/EditProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button_background_orange"
-        android:drawablePadding="-20dp"
-        android:fontFamily="@font/poppins"
-        android:gravity="center"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:text="Edit Profile"
-        android:textAlignment="center"
-        android:textColor="@color/whiteTextColor"
-        android:textSize="20sp"
-        app:drawableRightCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
+
 
     <!--    Logout Button    -->
     <TextView
@@ -166,7 +158,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginEnd="20dp"
         android:drawablePadding="10dp"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
@@ -174,10 +165,12 @@
         android:textColor="#FF0000"
         android:textSize="24sp"
         app:drawableStartCompat="@drawable/icon_logout"
-        app:layout_constraintBottom_toBottomOf="@+id/EditProfile"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/EditProfile"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9"
+        app:layout_constraintVertical_bias="0.102" />
 
     <!--    Bottom Wave    -->
     <TextView

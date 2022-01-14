@@ -50,9 +50,6 @@
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".Dashboard_Edit_Account_Info"
-            android:exported="false" />
-        <activity
             android:name=".Dashboard_SOS_Problem"
             android:exported="false" />
         <activity
