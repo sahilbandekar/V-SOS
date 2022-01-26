@@ -1,5 +1,7 @@
 package com.example.vsos;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,6 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
 
@@ -29,7 +33,7 @@ public class RegisterOption extends AppCompatActivity {
         regUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterOption.this, Login.class);
+                Intent intent = new Intent(RegisterOption.this, SignUp.class);
                 startActivity(intent);
             }
         });
@@ -55,6 +59,19 @@ public class RegisterOption extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        // Making user stay Logged in
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            Intent i = new Intent(RegisterOption.this, Homepage.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        } else {
+            // User is signed out
+            Log.d(TAG, "onAuthStateChanged:signed_out");
+        }
 
 
     }

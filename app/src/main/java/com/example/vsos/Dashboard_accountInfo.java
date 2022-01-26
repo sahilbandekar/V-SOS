@@ -24,7 +24,6 @@ public class Dashboard_accountInfo extends AppCompatActivity {
 
     EditText fullName, email, phone;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +70,44 @@ public class Dashboard_accountInfo extends AppCompatActivity {
         // Fetching user's data
         firebaseMethod();
 
+        // Fetching mechanic data
+        mechanicFirebaseMethod();
+
+    }
+
+
+    // Displaying mechanic information
+    private void mechanicFirebaseMethod() {
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        if (uid == null) {
+            return;
+        }
+        Log.d("ContentValues", uid);
+        FirebaseDatabase.getInstance().getReference().child("Mechanics")
+                .child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!snapshot.exists()) {
+                    return;
+                }
+                UserClass users = snapshot.getValue(UserClass.class);
+                if (users == null) {
+                    return;
+                }
+                email.setText(users.getEmail());
+                if (users.getPhoneNumber().equals("default")) {
+                    phone.setVisibility(View.GONE);
+                } else {
+                    phone.setText(users.getPhoneNumber());
+                }
+                fullName.setText(users.getName().toUpperCase());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     // Displaying User's information
