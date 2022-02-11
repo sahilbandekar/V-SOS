@@ -130,18 +130,16 @@ public class Login extends AppCompatActivity {
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
 
-            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful())
-                    {
+                    if (task.isSuccessful()) {
                         progressDialog.dismiss();
                         sendUserToNextActivity();
                         Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    }else
-                    {
+                    } else {
                         progressDialog.dismiss();
-                        Toast.makeText(Login.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -150,14 +148,13 @@ public class Login extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent = new Intent(Login.this,Homepage.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent = new Intent(Login.this, Homepage.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
 
-    public void onLoginClick (View view)
-    {
+    public void onLoginClick(View view) {
         startActivity(new Intent(this, SignUp.class));
         overridePendingTransition(R.anim.slide_in_right, R.anim.stay);
     }

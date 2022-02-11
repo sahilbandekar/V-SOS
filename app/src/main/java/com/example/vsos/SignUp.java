@@ -28,6 +28,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
@@ -41,6 +42,8 @@ public class SignUp extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+    private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,7 @@ public class SignUp extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         // Onclick Listener for Register button
         btnRegister.setOnClickListener(v -> PerformAuth());
@@ -119,7 +123,7 @@ public class SignUp extends AppCompatActivity {
                     });
 
 
-                    UserClass userMap = new UserClass(email, password, name, number);
+                    UserClass userMap = new UserClass(email, password, name, number, 0);
 
                     FirebaseUser user = task.getResult().getUser();
                     if (user == null) {
@@ -172,7 +176,8 @@ public class SignUp extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent = new Intent(SignUp.this, EmailVerification.class);
+        String user = "User";
+        Intent intent = new Intent(SignUp.this, RegisterVehicle.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
@@ -186,7 +191,6 @@ public class SignUp extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
-
 
 
     // Sliding  Animation

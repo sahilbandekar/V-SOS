@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".LoggedOut">
 
     <LinearLayout
@@ -21,8 +22,7 @@
             android:layout_width="300dp"
             android:layout_height="260dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             app:srcCompat="@drawable/logout" />
 
         <TextView
@@ -37,51 +37,74 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-
+            android:layout_marginBottom="20dp"
             android:fontFamily="@font/poppins"
             android:text="Oh no... Please come back..."
             android:textAlignment="center"
             android:textColor="#696969"
             android:textSize="20sp" />
 
+
+        <!--    Btn Login Again    -->
+        <TextView
+            android:id="@+id/loginAgain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_background_orange"
+            android:backgroundTint="#11C6BD"
+            android:drawablePadding="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:paddingStart="18dp"
+            android:text="Login Again"
+            android:textColor="@color/whiteTextColor"
+            android:textSize="20sp"
+            app:drawableStartCompat="@drawable/ic_baseline_login_24"
+            app:drawableTint="@color/whiteTextColor" />
+
+        <!--    Btn Google  -->
         <TextView
             android:id="@+id/btnGoogle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/button_background_orange"
             android:backgroundTint="#013220"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center_vertical"
-            android:padding="8dp"
+            android:padding="10dp"
             android:paddingStart="18dp"
             android:text="Login with Email"
             android:textColor="@color/whiteTextColor"
-            android:textSize="22sp"
+            android:textSize="20sp"
             app:drawableStartCompat="@drawable/email_30dp"
             app:drawableTint="@color/whiteTextColor" />
 
+
+        <!--    Btn Facebook    -->
         <TextView
             android:id="@+id/btnFacebook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/button_background_orange"
             android:backgroundTint="#1255FF"
             android:drawablePadding="20dp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center_vertical"
-            android:padding="8dp"
+            android:padding="10dp"
             android:paddingStart="68dp"
             android:text="Login with Facebook"
             android:textColor="@color/whiteTextColor"
-            android:textSize="22sp"
+            android:textSize="20sp"
             app:drawableTint="@color/whiteTextColor" />
 
         <ImageView
@@ -94,7 +117,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="130dp"
             android:fontFamily="@font/poppins"
             android:text="By signing up, you consent to the"
             android:textAlignment="center"

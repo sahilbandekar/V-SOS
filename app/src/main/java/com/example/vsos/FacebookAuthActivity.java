@@ -108,7 +108,7 @@ public class FacebookAuthActivity extends Login {
                                         return;
                                     }
 
-                                    UserClass userMap = new UserClass(email, "Facebook User", name, "default");
+                                    UserClass userMap = new UserClass(email, "Facebook User", name, "default", 1);
 
                                     String userId = user.getUid();
 

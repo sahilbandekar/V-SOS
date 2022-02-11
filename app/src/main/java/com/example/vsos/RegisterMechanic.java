@@ -149,7 +149,7 @@ public class RegisterMechanic extends AppCompatActivity {
                             .addOnFailureListener(e -> Log.d(TAG, "onFailure: Email not sent " + e.getMessage()));
 
                     // Storing users data in database
-                    UserClass userMap = new UserClass(email, password, name, number);
+                    UserClass userMap = new UserClass(email, password, name, number, 0);
                     FirebaseUser user = task.getResult().getUser();
                     if (user == null) {
                         deleteCredential(credential);
@@ -200,7 +200,7 @@ public class RegisterMechanic extends AppCompatActivity {
 
     // Sending user to next activity after Registration
     private void sendUserToNextActivity() {
-        Intent intent = new Intent(RegisterMechanic.this, EmailVerification.class);
+        Intent intent = new Intent(RegisterMechanic.this, SignupSuccess.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

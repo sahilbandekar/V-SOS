@@ -22,7 +22,30 @@ public class Main_Intro_Activity extends AppCompatActivity {
 
     TextView[] dots;
     ViewPagerAdapter viewPagerAdapter;
+    ViewPager.OnPageChangeListener viewListner = new ViewPager.OnPageChangeListener() {
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.M)
+        @Override
+        public void onPageSelected(int position) {
+
+            setUpindicator(position);
+            if (position > 0) {
+                backbtn.setVisibility(View.VISIBLE);
+            } else {
+                backbtn.setVisibility(View.INVISIBLE);
+            }
+
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int state) {
+
+        }
+    };
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -38,7 +61,7 @@ public class Main_Intro_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (getitem(0) > 0){
+                if (getitem(0) > 0) {
                     mSlideViewPager.setCurrentItem(getitem(-1), true);
                 }
             }
@@ -84,7 +107,7 @@ public class Main_Intro_Activity extends AppCompatActivity {
         dots = new TextView[4];
         mDocLayout.removeAllViews();
 
-        for (int i = 0 ; i < dots.length ; i++){
+        for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226"));
             dots[i].setTextSize(35);
@@ -94,33 +117,7 @@ public class Main_Intro_Activity extends AppCompatActivity {
         dots[position].setTextColor(getResources().getColor(R.color.active, getApplicationContext().getTheme()));
     }
 
-    ViewPager.OnPageChangeListener viewListner = new ViewPager.OnPageChangeListener() {
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-        }
-
-        @RequiresApi(api = Build.VERSION_CODES.M)
-        @Override
-        public void onPageSelected(int position) {
-
-            setUpindicator(position);
-            if (position > 0){
-                backbtn.setVisibility(View.VISIBLE);
-            }else{
-                backbtn.setVisibility(View.INVISIBLE);
-            }
-
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
-
-        }
-    };
-
-
-    private int getitem(int i){
-      return mSlideViewPager.getCurrentItem() + i;
+    private int getitem(int i) {
+        return mSlideViewPager.getCurrentItem() + i;
     }
 }

@@ -16,6 +16,12 @@ public class LoggedOut extends AppCompatActivity {
         // Hooking Social media login variables
         TextView btnGoogle = findViewById(R.id.btnGoogle);
         TextView btnFacebook = findViewById(R.id.btnFacebook);
+        TextView btnloginAgain = findViewById(R.id.loginAgain);
+
+        btnloginAgain.setOnClickListener(v -> {
+            Intent intent = new Intent(LoggedOut.this, Login.class);
+            startActivity(intent);
+        });
 
         // Setting OnClick Listener on Google login button
         btnGoogle.setOnClickListener(v -> {

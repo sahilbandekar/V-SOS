@@ -65,12 +65,13 @@
                 android:src="@drawable/sedan" />
 
             <TextView
+                android:id="@+id/registeredVehicleNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="ASJLA618KSNAL"
-                android:textColor="#FF6B00"
+                android:text=""
+
                 android:textSize="18sp" />
 
             <ImageView
@@ -132,7 +133,8 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/registeredMake_Model"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-20dp"
                 android:padding="2dp"
@@ -140,7 +142,8 @@
                 android:textColor="@color/black" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/registeredVehicleColor"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="150dp"
                 android:padding="2dp"
@@ -148,6 +151,7 @@
                 android:textColor="@color/black" />
 
             <TextView
+                android:id="@+id/registeredVehicleYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="250dp"

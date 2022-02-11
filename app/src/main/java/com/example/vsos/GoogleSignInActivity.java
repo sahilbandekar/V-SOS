@@ -98,7 +98,7 @@ public class GoogleSignInActivity extends Login {
                             String personName = acct.getDisplayName();
                             String personEmail = acct.getEmail();
 
-                            UserClass userMap = new UserClass(personEmail, "Google User", personName, "default");
+                            UserClass userMap = new UserClass(personEmail, "Google User", personName, "default", 1);
 
                             String userId = user.getUid();
 

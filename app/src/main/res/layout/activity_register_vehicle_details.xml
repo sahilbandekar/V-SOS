@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="#FFFFFF"
     android:focusableInTouchMode="true"
     tools:context=".Register_Vehicle_Details">
 
@@ -78,6 +79,7 @@
                     android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/RegdOwner"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="8dp"
@@ -87,6 +89,8 @@
                     android:hint="Ex. John Michael Doe"
                     android:inputType="textPersonName"
                     android:padding="10dp"
+                    android:textColor="#252525"
+                    android:textColorHint="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
@@ -99,14 +103,17 @@
                     android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/RegdNo"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="8dp"
                     android:background="@drawable/custom_input"
                     android:drawablePadding="12dp"
                     android:hint="Ex. MH-43-AC-1985"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:padding="10dp"
+                    android:textColor="#252525"
+                    android:textColorHint="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
@@ -119,6 +126,7 @@
                     android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/make_Model"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="8dp"
@@ -127,9 +135,12 @@
                     android:hint="Ex. A‑Class / Mercedes‑Benz"
                     android:inputType="text"
                     android:padding="10dp"
+                    android:textColor="#252525"
+                    android:textColorHint="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -139,6 +150,7 @@
                     android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/vehicleColor"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="8dp"
@@ -147,6 +159,8 @@
                     android:hint="Ex. Black"
                     android:inputType="text"
                     android:padding="10dp"
+                    android:textColor="#252525"
+                    android:textColorHint="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
@@ -159,6 +173,7 @@
                     android:textSize="18sp" />
 
                 <EditText
+                    android:id="@+id/vehicleYear"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:background="@drawable/custom_input"
@@ -166,6 +181,8 @@
                     android:hint="Ex. 2019"
                     android:inputType="date|datetime"
                     android:padding="10dp"
+                    android:textColor="#252525"
+                    android:textColorHint="@color/black"
                     android:textSize="16sp" />
 
                 <!--         Register Button       -->
@@ -177,7 +194,7 @@
                     android:paddingRight="10dp">
 
                     <TextView
-                        android:id="@+id/registerMechanic"
+                        android:id="@+id/registerVehicle"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="25dp"

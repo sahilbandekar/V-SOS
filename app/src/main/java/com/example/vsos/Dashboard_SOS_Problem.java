@@ -44,9 +44,9 @@ public class Dashboard_SOS_Problem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 accident.toggle();
-                if (accident.isChecked()){
+                if (accident.isChecked()) {
                     Toast.makeText(Dashboard_SOS_Problem.this, "Accident", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     Toast.makeText(Dashboard_SOS_Problem.this, "Unchecked", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -57,9 +57,9 @@ public class Dashboard_SOS_Problem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkedTextView.toggle();
-                if (checkedTextView.isChecked()){
+                if (checkedTextView.isChecked()) {
                     Toast.makeText(Dashboard_SOS_Problem.this, "Other reason", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     Toast.makeText(Dashboard_SOS_Problem.this, "Unchecked", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -70,9 +70,9 @@ public class Dashboard_SOS_Problem extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 deadBattery.toggle();
-                if (deadBattery.isChecked()){
+                if (deadBattery.isChecked()) {
                     Toast.makeText(Dashboard_SOS_Problem.this, "Dead Battery", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     Toast.makeText(Dashboard_SOS_Problem.this, "Unchecked", Toast.LENGTH_SHORT).show();
                 }
             }

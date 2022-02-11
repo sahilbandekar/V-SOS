@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class EmailVerification extends AppCompatActivity {
 
-    TextView TryAnotherEmail;
+    TextView TryAnotherEmail, login;
 
 
     @Override
@@ -25,6 +25,12 @@ public class EmailVerification extends AppCompatActivity {
             startActivity(intent);
         });
 
+        login = findViewById(R.id.login);
+        login.setOnClickListener(v -> {
+            Intent intent = new Intent(EmailVerification.this, SignUp.class);
+            startActivity(intent);
+        });
+
     }
 
     public void openApp(View view) {
@@ -33,6 +39,8 @@ public class EmailVerification extends AppCompatActivity {
             startActivity(launchIntent);
         } else {
             Toast.makeText(EmailVerification.this, "There is no such package", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(EmailVerification.this, SignUp_Error.class);
+            startActivity(intent);
         }
     }
 }

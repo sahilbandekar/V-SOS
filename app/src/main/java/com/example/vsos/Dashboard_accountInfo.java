@@ -21,7 +21,6 @@ import com.google.firebase.database.ValueEventListener;
 public class Dashboard_accountInfo extends AppCompatActivity {
 
 
-
     EditText fullName, email, phone;
 
     @Override
@@ -117,31 +116,33 @@ public class Dashboard_accountInfo extends AppCompatActivity {
             return;
         }
         Log.d("ContentValues", uid);
-        FirebaseDatabase.getInstance().getReference().child("Users")
-                .child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (!snapshot.exists()) {
-                    return;
-                }
-                UserClass users = snapshot.getValue(UserClass.class);
-                if (users == null) {
-                    return;
-                }
-                email.setText(users.getEmail());
-                if (users.getPhoneNumber().equals("default")) {
-                    phone.setVisibility(View.GONE);
-                } else {
-                    phone.setText(users.getPhoneNumber());
-                }
-                fullName.setText(users.getName().toUpperCase());
-            }
+        FirebaseDatabase.getInstance().getReference()
+                .child("Users")
+                .child(uid)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (!snapshot.exists()) {
+                            return;
+                        }
+                        UserClass users = snapshot.getValue(UserClass.class);
+                        if (users == null) {
+                            return;
+                        }
+                        email.setText(users.getEmail());
+                        if (users.getPhoneNumber().equals("default")) {
+                            phone.setVisibility(View.GONE);
+                        } else {
+                            phone.setText(users.getPhoneNumber());
+                        }
+                        fullName.setText(users.getName().toUpperCase());
+                    }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+                    }
+                });
     }
 
 }
