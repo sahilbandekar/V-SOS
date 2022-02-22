@@ -77,6 +77,15 @@ public class Dashboard_EditVehicle extends AppCompatActivity {
                 String VehicleColor = binding.updateVehicleColor.getText().toString();
                 String VehicleYear = binding.updateVehicleYear.getText().toString();
 
+                if (regNo.isEmpty()){
+                    updateRegNo.setError("Please enter registration number");
+                } else if (regMakeModel.isEmpty()){
+                    updateMakeModel.setError("Please enter Make / Model");
+                } else if (VehicleColor.isEmpty()){
+                    updateVehicleColor.setError("Please enter vehicle colour");
+                } else if (VehicleYear.isEmpty()){
+                    updateVehicleYear.setError("Please enter registration year");
+                }
                 UpdateData(regNo, regMakeModel, VehicleColor, VehicleYear);
             }
         });

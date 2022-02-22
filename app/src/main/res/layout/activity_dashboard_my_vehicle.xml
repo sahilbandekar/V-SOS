@@ -97,7 +97,7 @@
                 android:id="@+id/makeModel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-20dp"
+                android:layout_marginStart="-20dp"
                 android:padding="2dp"
                 android:text="Make / Model"
                 android:textColor="#696969" />
@@ -106,16 +106,16 @@
                 android:id="@+id/color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
+                android:layout_marginStart="150dp"
                 android:padding="2dp"
-                android:text="Color"
+                android:text="Colour"
                 android:textColor="#696969" />
 
             <TextView
                 android:id="@+id/year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="250dp"
+                android:layout_marginStart="250dp"
                 android:fontFamily="@font/poppins"
                 android:padding="2dp"
                 android:text="Year"
@@ -136,7 +136,7 @@
                 android:id="@+id/registeredMake_Model"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="-20dp"
+                android:layout_marginStart="-20dp"
                 android:padding="2dp"
                 android:text="Maruti Wagon R"
                 android:textColor="@color/black" />
@@ -145,7 +145,7 @@
                 android:id="@+id/registeredVehicleColor"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="150dp"
+                android:layout_marginStart="150dp"
                 android:padding="2dp"
                 android:text="Black"
                 android:textColor="@color/black" />
