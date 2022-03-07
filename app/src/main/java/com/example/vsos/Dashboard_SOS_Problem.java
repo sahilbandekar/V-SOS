@@ -37,6 +37,15 @@ public class Dashboard_SOS_Problem extends AppCompatActivity {
             }
         });
 
+        TextView btnNext = findViewById(R.id.btnNext);
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard_SOS_Problem.this, sos_stage2.class);
+                startActivity(intent);
+            }
+        });
+
         // checkable
 
         CheckedTextView accident = findViewById(R.id.checked_accident);
