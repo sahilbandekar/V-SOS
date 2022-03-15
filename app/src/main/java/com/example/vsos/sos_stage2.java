@@ -11,13 +11,16 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class sos_stage2 extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 1;
-    private TextView callTxt, callButton, callTxt1, callButton1, callTxt2, callButton2;
+    ImageView BackArrow;
+    View OpenMap;
+    private TextView callTxt, callButton, callTxt1, callButton1, callTxt2, callButton2, BackArrowText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,11 @@ public class sos_stage2 extends AppCompatActivity {
         callButton = findViewById(R.id.callButton);
         callButton1 = findViewById(R.id.callButton1);
         callButton2 = findViewById(R.id.callButton2);
+
+        BackArrow = findViewById(R.id.BackArrow);
+        BackArrowText = findViewById(R.id.BackArrowText);
+
+        OpenMap = findViewById(R.id.OpenMap);
 
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +56,31 @@ public class sos_stage2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CallButton2();
+            }
+        });
+
+        OpenMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(sos_stage2.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        BackArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(sos_stage2.this, Homepage.class);
+                startActivity(intent);
+            }
+        });
+
+        BackArrowText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(sos_stage2.this, Homepage.class);
+                startActivity(intent);
             }
         });
     }

@@ -22,7 +22,7 @@ public class Homepage extends AppCompatActivity {
 
         helpMe = findViewById(R.id.helpMe);
         helpMe.setOnClickListener(v -> {
-            Intent intent = new Intent(Homepage.this, Dashboard_SOS_Problem.class);
+            Intent intent = new Intent(Homepage.this, sos_stage2.class);
             startActivity(intent);
             finish();
         });
